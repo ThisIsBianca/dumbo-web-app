@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+.no-shadow {
+  box-shadow: none!important;
+}
+
+.brand-logo {
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+.titleStyle {
+  font-family: Montserrat;
+  color: grey;
+}
+
+.contentStyle{
+  font-family: Open Sans;
+  color: grey;
+}
+
+.dropdownStyle{
+  font-family: Open Sans;
+  font-size: small;
+  color: grey;
+}
+
+.footerStyle{
+  font-size: x-small;
+  color: grey;
+}
+
+.card-horizontal {
+  padding: 30px !important;
+}
+
+.activityTitle {
+  color: #37474f;
+}
+
+.infoIcon{
+  font-size: medium;
+}
+
+.infoStyle{
+  font-family: Open Sans;
+  color: #bdbdbd;
+}

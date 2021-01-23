@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css & custom.css-->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <!--Import fonts-->
+  <link rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+  crossorigin="anonymous">
+  <!--JavaScript-->
+  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+  </script>  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<title>My Dumbo</title>
+<body id="index">
+  <!--NavBar-->
+  <div class="navbar-fixed">
+    <nav class="white no-shadow">
+      <div class="nav-wrapper">
+        <a href="#" class="center brand-logo blue-grey-text text-darken-2">Today</a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+          <i class="blue-grey-text text-darken-2 material-icons">menu</i>
+        </a>
+        <ul class="left hide-on-med-and-down">
+          <li>
+            <a class="blue-grey-text text-darken-2" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="blue-grey-text text-darken-2" href="today.html">Today</a>
+          </li>
+          <li>
+            <a class="blue-grey-text text-darken-2" href="myLabels.html">My Labels</a>
+          </li>
+          <li>
+            <a class="blue-grey-text text-darken-2" href="overview.html">Overview</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <ul class="sidenav" id="mobile-nav">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="today.html">Today</a>
+    </li>
+    <li>
+      <a href="myLabels.html">My Labels</a>
+    </li>
+    <li>
+      <a href="overview.html">Overview</a>
+    </li>
+  </ul>
+
+  <!--Indications-->
+  <section class="section infoStyle">
+    <div class="row">
+      <div class="col s1 m2 l2">
+      </div>
+      <div class="col s10 m8 l8">
+        <p><i class="infoIcon material-icons grey-text ">info</i>
+          These activities will be moved over to "Overview" today
+          at 02:00 A.M. You will not be able to play, label, accept or deny today's activites after 02:00 A.M.</p>
+        </div>
+        <div class="col s1 m2 l2"></div>
+      </div>
+      <section>
+
+        <!--Today's activities-->
+        <section id="todaysActivities">
+          <div class="container">
+            <ul class="collection z-depth-4 contentStyle">
+
+              <!--Unknown activity-->
+              <li class="collection-item avatar" id="activityUnknown">
+                <a href="#">
+                  <i class="material-icons circle light-blue darken-3 z-depth-2">play_arrow</i></a>
+                  <span class="title activityTitle">Unknown activity</span>
+                  <p>Play activity to identify</p>
+                  <p class="timeDetected">2/02/2019 12:01</p>
+                  <a href="#nameUnknown" class="secondary-content modal-trigger"><i class="material-icons">edit</i></a>
+
+                  <!--Pop-up window for editing activity label-->
+                  <div class="modal contentStyle" id="nameUnknown" >
+                    <div class="modal-content">
+                      <span class="title">Label activity</span>
+
+                      <!--Input field for new label-->
+                      <div class="input-field">
+                        <input id="new_label" type="text" class="validate">
+                        <label for="last_name">New label</label>
+                      </div>
+
+                      <!--Drop-down menu for existing labels-->
+                      <div class="input-field">
+                        <select class="dropdownStyle">
+                          <option value="1">Cooking</option>
+                          <option value="2">Jogging</option>
+                          <option value="3">Pottery</option>
+                          <option value="3">Shower</option>
+                        </select>
+                        <label>...or choose an existing label</label>
+                      </div>
+                    </div>
+
+                    <!--Buttons of save and discard-->
+                    <div class="modal-footer">
+                      <a href="#!" class="modal-close waves-effect waves-green btn-flat teal-text">Save</a>
+                      <a href="#!" class="modal-close waves-effect waves-green btn-flat deep-orange-text text-darken-1">Discard</a>
+                    </div>
+                  </div>
+                </li>
+
+
+                <!--Pending activity = it hasn't been accepted or denied yet-->
+                <li class="collection-item avatar" id="activityPending">
+                  <i class="material-icons circle grey darken-1">hourglass_empty</i>
+                  <span class="title activityTitle">Cooking</span>
+                  <p>Am I correct?</p>
+                  <p class="timeDetected">2/02/2019 12:01</p>
+                  <section class="secondary-content">
+                    <a class="btn-floating waves-effect waves-light btn z-depth-2" id="acceptButton"><i class="material-icons">check</i></a>
+                    <a class="btn-floating waves-effect waves-light deep-orange darken-1 btn z-depth-2" id="denyButton"><i class="material-icons">clear</i></a>
+                  </section>
+                </li>
+
+                <!--Accepted activity-->
+                <li class="collection-item avatar" id="activityAccepted">
+                  <i class="material-icons circle teal">check</i>
+                  <span class="title activityTitle">Shower</span>
+                  <p>Activity accepted</p>
+                  <p class="timeDetected">2/02/2019 12:01</p>
+                </li>
+
+                <!--Denied activity-->
+                <li class="collection-item avatar" id="activityDenied">
+                  <i class="material-icons circle deep-orange darken-1">clear</i>
+                  <span class="title activityTitle">Jogging</span>
+                  <p>Activity denied</p>
+                  <p class="timeDetected">2/02/2019 12:01</p>
+                  <a href="#nameUnknown" class="secondary-content modal-trigger"><i class="material-icons">edit</i></a>
+                 </li>
+                 <!--Accepted activity-->
+                 <li class="collection-item avatar" id="activityAccepted">
+                   <i class="material-icons circle teal">check</i>
+                   <span class="title activityTitle">Shower</span>
+                   <p>Activity accepted</p>
+                   <p class="timeDetected">2/02/2019 12:01</p>
+                 </li>                <!--Accepted activity-->
+                                 <li class="collection-item avatar" id="activityAccepted">
+                                   <i class="material-icons circle teal">check</i>
+                                   <span class="title activityTitle">Shower</span>
+                                   <p>Activity accepted</p>
+                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                 </li>                <!--Accepted activity-->
+                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                   <i class="material-icons circle teal">check</i>
+                                                   <span class="title activityTitle">Shower</span>
+                                                   <p>Activity accepted</p>
+                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                 </li>                <!--Accepted activity-->
+                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                   <i class="material-icons circle teal">check</i>
+                                                                   <span class="title activityTitle">Shower</span>
+                                                                   <p>Activity accepted</p>
+                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                 </li>                <!--Accepted activity-->
+                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                   <p>Activity accepted</p>
+                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                 </li>                <!--Accepted activity-->
+                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                   <p>Activity accepted</p>
+                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                   <p>Activity accepted</p>
+                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                                                                                                                                                 </li>                <!--Accepted activity-->
+                                                                                                                                                                                                                                                                                                                                 <li class="collection-item avatar" id="activityAccepted">
+                                                                                                                                                                                                                                                                                                                                   <i class="material-icons circle teal">check</i>
+                                                                                                                                                                                                                                                                                                                                   <span class="title activityTitle">Shower</span>
+                                                                                                                                                                                                                                                                                                                                   <p>Activity accepted</p>
+                                                                                                                                                                                                                                                                                                                                   <p class="timeDetected">2/02/2019 12:01</p>
+                                                                                                                                                                                                                                                                                                                                 </li>
+
+
+
+
+
+
+              </ul>
+            </div>
+          </section>
+
+
+          <!--Pop-up window for editing activity label-->
+          <div class="modal contentStyle" id="nameUnknown" >
+            <div class="modal-content">
+              <span class="title">Label activity</span>
+
+              <!--Input field for new label-->
+              <div class="input-field">
+                <input id="new_label" type="text" class="validate">
+                <label for="last_name">New label</label>
+              </div>
+
+              <!--Drop-down menu for existing labels-->
+              <div class="input-field">
+                <select class="dropdownStyle">
+                  <option value="1">Cooking</option>
+                  <option value="2">Jogging</option>
+                  <option value="3">Shower</option>
+                  <option value="3">Shower</option>
+                </select>
+                <label>...or choose an existing label</label>
+              </div>
+            </div>
+
+            <!--Buttons of save and discard-->
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat teal-text">Save</a>
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat deep-orange-text text-darken-1">Discard</a>
+            </div>
+          </div>
+
+
+
+          <!---Bottom section-->
+          <section class="section footerStyle">
+            <div class="divider"></div>
+            <div class="container center-align">
+              <p>Dumbo all rights reserved</p>
+            </div>
+            <div class="container center-align">
+              <img src="img/logo6.png" width="55" height="40" >
+            </div>
+          </section>
+
+
+          <!--jquery <script>
+          $(document).ready(function(){
+            $('.modal').modal();
+            $('select').formSelect();
+          })
+          </script> -->
+
+          <!--Initialisations-->
+          <script>
+          //sidenav
+          const sideNav = document.querySelector('.sidenav');
+          M.Sidenav.init(sideNav, {});
+
+          //modal or pop-up
+          var elems = document.querySelectorAll('.modal');
+          var instances = M.Modal.init(elems, {});
+
+          //selecion menu
+          const selector = document.querySelector('select');
+          M.FormSelect.init(selector, {});
+
+          </script>
+        </body>
+
+        </html>

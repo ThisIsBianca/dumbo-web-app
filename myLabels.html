@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css & custom.css-->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <!--Import fonts-->
+  <link rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+  crossorigin="anonymous">
+  <!--JavaScript-->
+  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+  </script>  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<title>My Dumbo</title>
+<body id="index">
+  <!--NavBar-->
+  <div class="navbar-fixed">
+    <nav class="white no-shadow">
+      <div class="nav-wrapper">
+        <a href="#" class="center brand-logo blue-grey-text text-darken-2">My labels</a>
+        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+          <i class="blue-grey-text text-darken-2 material-icons">menu</i>
+        </a>
+        <ul class="left hide-on-med-and-down">
+          <li>
+            <a class="blue-grey-text text-darken-2" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="blue-grey-text text-darken-2" href="today.html">Today</a>
+          </li>
+          <li>
+            <a class="blue-grey-text text-darken-2" href="myLabels.html">My Labels</a>
+          </li>
+          <li>
+            <a class="blue-grey-text text-darken-2" href="overview.html">Overview</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <ul class="sidenav" id="mobile-nav">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="today.html">Today</a>
+    </li>
+    <li>
+      <a href="myLabels.html">My Labels</a>
+    </li>
+    <li>
+      <a href="overview.html">Overview</a>
+    </li>
+  </ul>
+
+  <!--Info-->
+  <section class="section infoStyle">
+    <div class="row">
+      <div class="col s1 m2 l2">
+      </div>
+      <div class="col s10 m8 l8">
+        <p><i class="infoIcon material-icons grey-text ">info</i>
+          These are all your personal labels. You can choose to re-name them,
+          delete them or ignore them. You can also choose to create new labels.</p>
+        </div>
+        <div class="col s1 m2 l2"></div>
+      </div>
+      <section>
+
+        <!--List of labels-->
+      <section class="section myLabels">
+        <div class="row">
+
+          <div class="col s6 m4 l3 myLabel" id="label1">
+            <div class="card z-depth-4">
+            <div class="card-content">
+              <span class="card-title">Cooking</span>
+              </div>
+              <div class="card-action">
+                <a href="#renameLabel" class="modal-trigger teal-text">Rename</a>
+                <a href="#deleteLabel" class="modal-trigger teal-text">Delete</a>
+                <a href="#ignoreLabel" class="modal-trigger teal-text">Ignore</a>
+              </div>
+          </div>
+          </div>
+
+          <div class="col s6 m4 l3 myLabel" id="label2">
+            <div class="card z-depth-4">
+            <div class="card-content">
+              <span class="card-title">Jogging</span>
+              </div>
+              <div class="card-action">
+                <a href="#renameLabel" class="modal-trigger teal-text">Rename</a>
+                <a href="#deleteLabel" class="modal-trigger teal-text">Delete</a>
+                <a href="#ignoreLabel" class="modal-trigger teal-text">Ignore</a>
+              </div>
+          </div>
+          </div>
+
+          <div class="col s6 m4 l3 myLabel" id="label3">
+            <div class="card z-depth-4">
+            <div class="card-content">
+              <span class="card-title">Shower</span>
+              </div>
+              <div class="card-action">
+                <a href="#renameLabel" class="modal-trigger teal-text">Rename</a>
+                <a href="#deleteLabel" class="modal-trigger teal-text">Delete</a>
+                <a href="#ignoreLabel" class="modal-trigger teal-text">Ignore</a>
+              </div>
+          </div>
+          </div>
+
+          <div class="col s6 m4 l3 myLabel" id="label4">
+            <div class="card z-depth-4">
+            <div class="card-content">
+              <span class="card-title">Pottery</span>
+              </div>
+              <div class="card-action">
+                <a href="#renameLabel" class="modal-trigger teal-text">Rename</a>
+                <a href="#deleteLabel" class="modal-trigger teal-text">Delete</a>
+                <a href="#ignoreLabel" class="modal-trigger teal-text">Ignore</a>
+              </div>
+          </div>
+          </div>
+
+        </div>
+    </section>
+
+
+<!--Rename modal-->
+<div class="modal contentStyle" id="renameLabel" >
+  <div class="modal-content">
+    <span class="title">Rename label</span>
+    <p>Personalize the name of this label.</p>
+    <!--Input field for re-named label-->
+    <div class="input-field">
+      <input id="new_label" type="text" class="validate">
+      <label for="last_name">New name</label>
+    </div>
+
+  <!--Buttons of save and discard-->
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat teal-text">Rename</a>
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat deep-orange-text text-darken-1">Discard</a>
+  </div>
+</div>
+</div>
+
+<!--Delete modal-->
+<div class="modal contentStyle" id="deleteLabel">
+  <div class="modal-content">
+    <h4>Delete label</h4>
+    <p>Once deleted, I will take a long time to learn to detect this type of activities again so think twice!</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat teal-text">Delete anyway</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat deep-orange-text text-darken-1">Close</a>
+  </div>
+</div>
+
+<!--Ignore modal-->
+<div class="modal contentStyle" id="ignoreLabel">
+  <div class="modal-content">
+    <h4>Ignore label</h4>
+    <p>Once ignored, I will not notify you if I detect this type of activity anymore.
+      However, it will still show in "Overview" and "Today".</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat teal-text">Ignore</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat deep-orange-text text-darken-1">Close</a>
+  </div>
+</div>
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn-large teal waves-effect waves-light">
+    <i class="large material-icons">add</i>
+  </a>
+  </div>
+
+        <!---Bottom section-->
+        <section class="section footerStyle">
+          <div class="divider"></div>
+          <div class="container center-align">
+            <p>Dumbo all rights reserved</p>
+          </div>
+          <div class="container center-align">
+            <img src="img/logo6.png" width="55" height="40" >
+          </div>
+        </section>
+
+        <!--Initialisations-->
+        <script>
+          //sidenav
+          const sideNav = document.querySelector('.sidenav');
+          M.Sidenav.init(sideNav, {});
+
+          // //modal or pop-up
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems, {});
+
+          //selecion menu
+          const selector = document.querySelector('select');
+          M.FormSelect.init(selector, {});
+
+        </script>
+      </body>
+
+      </html>
